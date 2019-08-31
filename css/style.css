@@ -99,7 +99,7 @@ img{
 .tabs .container{
     display: grid;
     grid-template-columns:  repeat(3,1fr);
-    grid-gap: 1rem;
+    grid-gap: 5rem;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -116,21 +116,36 @@ img{
    cursor: pointer;
    
 }
+.tab-item{   
+    border-bottom: var(--dark-color) 4px solid;    
+}
 .tab-border{ 
     border-bottom: var(--primary-color) 4px solid;    
 }
 /*Tab content*/
 .tab-content{
+    height: 38rem;
     padding: 3rem 0;
     background: #000;
     color: #fff;
 }
+/*Hede content initially*/
+#tab-1-content,
+#tab-2-content,
+#tab-3-content{
+    display:none;
+}
+.show{
+    display: block !important;
+}
+
 #tab-1-content .tab-1-content-inner{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-gap: 2rem;
     align-items: center;
     justify-content: center;
+    margin: 4rem 0;
 
 }
 .tab-img{
@@ -172,6 +187,7 @@ img{
 .footer-cols{
     display:grid;
     grid-template-columns: repeat(4,1fr);
+    grid-gap: 1rem;
     justify-content: center;
     align-items: center;
 }
@@ -181,13 +197,17 @@ img{
 .footer-cols li a:hover{
  text-decoration: underline;
 }
+.footer-cols ul{
+   height: 100%;
+}
 /*conteiner*/
 .container{
     max-width: 70%;
     margin:auto;
     overflow: hidden;
-    padding:0 2rem;
+    padding:0 2rem;   
 }
+
 
 /*Text styles*/
 .text-xl{
@@ -324,4 +344,52 @@ img{
 .img-world{
     widows: 1.5rem;
     height: 1.5rem;
+}
+
+@media(max-width: 800px){
+    .showcase{
+        height: 100vh;
+    }
+    .hide-sm{
+        display: none;
+    }
+    .showcase-top img{
+        top:30%;
+        left:5%;
+        transform: translate(0);
+    }
+    .showcase-content h1{
+        font-size: 3rem;
+        line-height: 1;
+        margin: 0 0 1rem;
+    }
+    .showcase-content p{
+        font-size: 1rem;
+        line-height: 1;
+        margin: 0 0 1rem;
+    }
+    .btn{
+        padding: 1rem 0.9rem;
+    }
+    .btn-xl{
+        font-size: 2rem;
+    }
+  
+    .footer-cols{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .footer-cols li{
+        margin: 0.7rem 0;
+    }
+    .tabs .container{
+        grid-gap: 9rem;
+    }
+    .tab-img{
+        width: 2.6rem;
+        margin: 5px;
+    }
+    .questions{
+        display: none;
+    }
+  
 }
